@@ -1,0 +1,15 @@
+<!-- <h1>Authors#show</h1>
+<p>Find me in app/views/authors/show.html.erb</p> -->
+<h1>Here Is Info On: <%= @author.first_name  %></h1>
+<h2>
+<%= @author.first_name %>
+<br>
+<%= @author.last_name  %>
+<br>
+<%= @author.age  %>
+</h2>
+<%= link_to "Show Posts", author_posts_path(@author) %>
+<br>
+
+<br>
+<%= link_to "RETURN", authors_path %>

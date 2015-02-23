@@ -1,0 +1,19 @@
+<!-- <h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p> -->
+
+
+<h1>POSTS BY <%= @author.first_name  %></h1>
+
+<% @posts.each do |post|  %>
+<br>
+<%= post.title  %>
+<br>
+<%= post.category  %>
+<br>
+<%= link_to "view post", post_path(post) %>
+<br>
+<p>-------</p>
+
+<% end  %>
+
+<%= link_to "Create Post", new_author_post(:post) %>

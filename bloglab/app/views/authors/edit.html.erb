@@ -1,0 +1,23 @@
+<!-- <h1>Authors#edit</h1>
+<p>Find me in app/views/authors/edit.html.erb</p> -->
+
+
+
+
+<h1>EDIT THIS AUTHOR</h1>
+
+
+<%= form_for @author, url: "/authors/#{@author.id}", method: "PUT" do |x| %>
+  <%= x.label :first %>
+  <%= x.text_field :first_name, autofocus: true %>
+
+   <%= x.label :last %>
+  <%= x.text_field :last_name %>
+
+   <%= x.label :age %>
+  <%= x.text_field :age %>
+
+  <%= x.submit %>
+
+  <%= link_to "Delete Author", "/authors/#{@author.id}", method:"DELETE", data: {confirm: "You really want to delete this author"}  %>
+<% end %>

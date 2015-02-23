@@ -1,0 +1,23 @@
+<!-- <h1>Authors#index</h1>
+<p>Find me in app/views/authors/index.html.erb</p> -->
+
+
+<h1>These are ALL the Authors</h1>
+<ul>
+
+<% @authors.each do |author|  %>
+
+<li><%= author.first_name %>, <%= author.last_name %>-----------------
+
+<%= link_to "Show details", author_path(author) %>
+
+<%= link_to "Edit the Author", edit_author_path(author) %> 
+
+<%= link_to "DELETE", author, method: :delete %>
+
+</li>
+
+</ul>
+<% end  %>
+
+<%= link_to "New Author", new_author_path %>
