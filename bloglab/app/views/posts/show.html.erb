@@ -1,16 +1,14 @@
 <!-- <h1>Posts#show</h1>
 <p>Find me in app/views/posts/show.html.erb</p> -->
 
+<center>
+<div class="jumbotron">
+  <h1><  Post By <%= @author.first_name  %>  ></h1>
+  <p><%= @post.title  %></p>
+  <p><%= @post.category  %></p>
+  <p><%= @post.body  %></p>
+  <p><%= link_to "Edit Post", edit_post_path(@post), :class=>"button btn btn-warning btn-lg" %></p>
 
-<h1>POSTS BY <%= @author.first_name  %></h1>
-<br>
-
-<%= @post.title  %>
-<br>
-<%= @post.category  %>
-<br>
-<%= @post.body  %>
-
-<%= link_to "Edit Post", edit_post_path(@post) %>
-<br>
-<%= link_to "RETURN", author_posts_path(@author) %>
+  <h3><%= link_to "RETURN", author_posts_path(@author), :class=>"button btn btn-primary btn-lg" %></h3>
+</div>
+</center>

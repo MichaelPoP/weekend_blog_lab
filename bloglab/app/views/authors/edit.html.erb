@@ -3,9 +3,9 @@
 
 
 
-
-<h1>EDIT THIS AUTHOR</h1>
-
+<center>
+<h1>Edit This Author</h1>
+<hr>
 
 <%= form_for @author, url: "/authors/#{@author.id}", method: "PUT" do |x| %>
   <%= x.label :first %>
@@ -16,8 +16,9 @@
 
    <%= x.label :age %>
   <%= x.text_field :age %>
+<br>
+  <%= x.submit :class=>"button btn btn-success btn-lg" %>
 
-  <%= x.submit %>
-
-  <%= link_to "Delete Author", "/authors/#{@author.id}", method:"DELETE", data: {confirm: "You really want to delete this author"}  %>
+  <%= link_to "Delete Author", "/authors/#{@author.id}", method:"DELETE", data: {confirm: "You really want to delete this author"}, :class=>"button btn btn-danger btn-lg" %>
 <% end %>
+</center>

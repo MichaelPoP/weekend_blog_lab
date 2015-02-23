@@ -1,15 +1,13 @@
 <!-- <h1>Authors#show</h1>
 <p>Find me in app/views/authors/show.html.erb</p> -->
-<h1>Here Is Info On: <%= @author.first_name  %></h1>
-<h2>
-<%= @author.first_name %>
-<br>
-<%= @author.last_name  %>
-<br>
-<%= @author.age  %>
-</h2>
-<%= link_to "Show Posts", author_posts_path(@author) %>
-<br>
 
-<br>
-<%= link_to "RETURN", authors_path %>
+
+<center>
+<div class="jumbotron">
+  <h1><  <%= @author.first_name  %>   ></h1>
+  <p><%= @author.first_name %>  <%= @author.last_name  %></p>
+  <p><%= @author.age  %></p>
+  <p><%= link_to "Show Posts", author_posts_path(@author), :class=>"btn btn-info btn-lg" %></a></p>
+  <h3><%= link_to "RETURN", authors_path, :class=>"button btn btn-primary btn-lg"%></h3>
+</div>
+</center>

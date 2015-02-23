@@ -5,7 +5,7 @@
 
 <h1>ADD A NEW POST HERE!</h1>
 
-
+<hr>
 <%= form_for [@author, @post], url: author_posts_path do |x| %>
   <%= x.label :title %>
   <%= x.text_field :title, :placeholder => "About a Thing", autofocus: true %>
@@ -16,5 +16,5 @@
    <%= x.label :body %>
   <%= x.text_field :body, :placeholder => "Blah Blah My feelings Blah Blah" %>
 
-  <%= x.submit %>
+  <%= x.submit :class=>"btn btn-success btn-large"%>
 <% end %>
