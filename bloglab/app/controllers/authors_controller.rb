@@ -10,7 +10,7 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new author_params
     if @author.save
-      redirect_to authors_path
+      redirect_to authors_path, flash: { success: "New Author Created!" }
     else
       render :new
     end 
@@ -28,7 +28,7 @@ class AuthorsController < ApplicationController
   def update
     @author = Author.find params[:id]
     if @author.update_attributes author_params
-        redirect_to author_path(@author)
+        redirect_to author_path(@author), flash: { success: "Author Updated!" }
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class AuthorsController < ApplicationController
   def destroy
     author = Author.find params[:id]
     author.destroy
-    redirect_to authors_path 
+    redirect_to authors_path, flash: { warning: "Author Deleted!" } 
   end
   private 
   def author_params

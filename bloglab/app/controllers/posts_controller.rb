@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @post = Post.new post_params
     @post.author = @author
     if @post.save
-      redirect_to author_posts_path #(@author)
+      redirect_to author_posts_path, flash: { success: "New Post Created!" } #(@author)
     else 
       render :new
     end
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     @post.update_attributes post_params
     @author = @post.author
     if @post.save
-      redirect_to post_path
+      redirect_to post_path, flash: { success: "Post Updated!" }
     else
       render :edit
     end
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find params[:id]
     post.destroy
-    redirect_to author_posts_path(post.author)
+    redirect_to author_posts_path(post.author), flash: { warning: "Post Deleted" }
   end
 
 
