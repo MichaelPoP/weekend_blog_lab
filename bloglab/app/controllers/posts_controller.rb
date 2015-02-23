@@ -37,7 +37,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find params[:id]
-    @post.update_attribute post_params
+    @post.update_attributes post_params
     @author = @post.author
     if @post.save
       redirect_to post_path
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find params[:id]
     post.destroy
-    redirect_to author_posts_path #(post.author)
+    redirect_to author_posts_path(post.author)
   end
 
 

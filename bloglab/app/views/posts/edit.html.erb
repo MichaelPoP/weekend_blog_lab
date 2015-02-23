@@ -1,2 +1,23 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<!-- <h1>Posts#edit</h1>
+<p>Find me in app/views/posts/edit.html.erb</p> -->
+
+
+<h1>EDIT A POST HERE!</h1>
+
+
+<%= form_for [@author, @post], url: "/posts/#{@post.id}", method: "PUT" do |x| %>
+  <%= x.label :title %>
+  <%= x.text_field :title, autofocus: true %>
+
+   <%= x.label :category %>
+  <%= x.text_field :category %>
+
+   <%= x.label :body %>
+  <%= x.text_field :body %>
+
+  <%= x.label :author_id  %>
+  <%= x.text_field :author_id %>
+  <%= x.submit %>
+
+  <%= link_to "Delete Post", "/posts/#{@post.id}", method:"DELETE", data: {confirm: "You really want to delete this post"}  %>
+<% end %>
