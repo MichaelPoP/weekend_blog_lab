@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bloglab</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+   <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+
+<% flash.each do |key, value| %>
+  <% if key == "notice" %>
+    <%= content_tag :div, value, class: "text-center alert alert-warning" %>
+  <% elsif key == "alert" %>
+    <%= content_tag :div, value, class: "text-center alert alert-danger" %>
+  <% else %>
+    <%= content_tag :div, value, class: "text-center alert alert-success" %>
+  <% end %>
+<% end %>
+
+
+</head>
+<body class="container-fluid">
+  <div id="user_nav">
+    <br>
+
+
+  
+
+
+    <% if current_user  %>
+    <h2>Signed in as:<%= current_user.name%></h2>
+    <%= link_to "Sign out", signout_path, class: "btn btn-danger btn-lg"  %>
+    <% else  %>
+    <%= link_to "Sign in with Twitter", "/auth/twitter", class: "btn btn-info btn-lg"%>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", class: "btn btn-primary btn-lg"%>
+    <% end  %>
+
+
+    <hr>
+  </div>
+
+<%= yield %>
+
+</body>
+</html>

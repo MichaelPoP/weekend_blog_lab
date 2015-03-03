@@ -1,0 +1,23 @@
+<!-- <h1>Posts#new</h1>
+<p>Find me in app/views/posts/new.html.erb</p> -->
+
+
+
+<h1>Add New Post Here!</h1>
+<center>
+<hr>
+<%= form_for [@author, @post], url: author_posts_path do |x| %>
+  <%= x.label :title %>
+  <%= x.text_field :title, :placeholder => "About a Thing", autofocus: true %>
+
+   <%= x.label :category %>
+  <%= x.text_field :category, :placeholder => "Stuff" %>
+
+ 
+<hr>
+ 
+  <%= x.text_area :body, :class=>"body", :placeholder => " Write Your Post Here ex:Blah Blah My feelings Blah Blah", :rows=> "10", :cols=> "60" %>
+<br>
+  <%= x.submit :class=>"btn btn-success btn-large"%>
+<% end %>
+</center>

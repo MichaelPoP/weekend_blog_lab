@@ -1,0 +1,19 @@
+<!-- <h1>Authors#new</h1>
+<p>Find me in app/views/authors/new.html.erb</p> -->
+
+
+<h1>ADD AN AUTHOR HERE!</h1>
+<hr>
+<%= form_for @author, url: authors_path do |x| %>
+  <%= x.label :first %>
+  <%= x.text_field :first_name, :placeholder => "James", autofocus: true %>
+
+   <%= x.label :last %>
+  <%= x.text_field :last_name, :placeholder => "Joyce" %>
+
+   <%= x.label :age %>
+  <%= x.number_field :age, :placeholder => "33" %>
+  
+
+  <%= x.submit :class=>"btn btn-success btn-large" %>
+<% end %>

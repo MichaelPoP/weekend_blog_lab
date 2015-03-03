@@ -1,0 +1,30 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.body {
+ 
+  margin-top: 10px;
+  border: 5px inset green;
+
+}
+.button {
+margin-top:10px;
+}
+
+.leftmar {
+  margin-left:10px;
+}
+
+h1{
+  font-variant: small-caps;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 16px;
+}
+
+#message_area{
+  rows: 20;
+}

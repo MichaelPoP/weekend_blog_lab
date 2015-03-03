@@ -1,0 +1,33 @@
+<!-- <h1>Authors#index</h1>
+<p>Find me in app/views/authors/index.html.erb</p> -->
+
+<h1>The Authors</h1>
+<hr>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>First</th>
+      <th>Last</th>
+      <th>Details</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th>Last Update</th>
+    </tr>
+  </thead>
+
+
+<% @authors.each do |author|  %>
+<tr>
+  <td><%= author.first_name %></td>
+  <td><%= author.last_name %></td>
+  <td><%= link_to "Show details", author_path(author), :class=>"btn btn-info btn-small" %></td>
+  <td><%= link_to "Edit the Author", edit_author_path(author), :class=>"btn btn-warning btn-small" %> </td>
+  <td><%= link_to "DELETE", author, method: :delete, :class=>"btn btn-danger btn-small" %></td>
+  <td><%= time_ago_in_words author.updated_at %></td>
+
+</tr>
+<% end  %>
+<%= link_to "New Author", new_author_path, :class=>"button btn btn-primary bt-large" %>
+<hr>
+
+
